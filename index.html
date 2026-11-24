@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piripiri em Rota — Turismo, Cultura e Natureza no Piauí</title>
+  <meta name="description" content="Guia oficial de turismo de Piripiri, Piauí. Explore cachoeiras, o Açude Caldeirão, Parque Nacional de Sete Cidades, hospedagens, gastronomia e eventos culturais.">
+  <meta property="og:title" content="Piripiri em Rota — Turismo no Piauí">
+  <meta property="og:description" content="Descubra lugares incríveis, explore as belezas naturais e viva experiências inesquecíveis em Piripiri, no coração do Piauí.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231e5128'/><text x='50' y='65' font-size='44' font-family='Georgia,serif' font-weight='bold' fill='%23faf8f5' text-anchor='middle'>PR</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Fraunces"', 'serif'],
+          },
+          colors: {
+            sand: '#faf8f5',
+            'sand-deep': '#f0ece4',
+            carnauba: '#1e5128',
+            clay: '#b45309',
+            border: '#e5e0d8',
+            foreground: '#1c1917',
+            'muted-foreground': '#57534e',
+            card: '#ffffff',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #faf8f5;
+      color: #1c1917;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .tab-content {
+      animation: fadeIn 0.35s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    button, a {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    button:active, a:active {
+      transform: scale(0.96);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-sand text-foreground">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 border-b border-border/70 bg-sand/90 backdrop-blur-md transition-all">
+    <div class="mx-auto max-w-7xl px-5 lg:px-10">
+      <div class="flex h-20 items-center justify-between gap-4">
+        <a href="#inicio" onclick="mudarTab('inicio')" class="flex items-center gap-3 group">
+          <img
+            src="./Fotos - Github/logopiripiriemrota.png"
+            onerror="this.onerror=null;this.src='./Fotos - Github/logopiripiriemrota.jpg';if(this.complete&&this.naturalWidth===0){this.src='https://placehold.co/88x88/1e5128/ffffff?text=PR'}"
+            alt="Piripiri em Rota"
+            class="h-12 w-12 rounded-full object-contain border border-carnauba/20 bg-white shadow-sm group-hover:scale-105"
+          />
+          <span class="font-display text-2xl tracking-tight text-foreground font-bold">
+            Piripiri <span class="text-carnauba">em Rota</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-1.5">
+          <button onclick="mudarTab('inicio')" data-tab="inicio" class="nav-btn active rounded-full px-5 py-2.5 text-sm font-semibold transition bg-carnauba text-sand shadow-sm hover:scale-105">Início</button>
+          <button onclick="mudarTab('pontos')" data-tab="pontos" class="nav-btn rounded-full px-5 py-2.5 text-sm font-semibold transition text-foreground/75 hover:bg-sand-deep hover:text-foreground hover:scale-105">Pontos Turísticos</button>
+          <button onclick="mudarTab('hospedagens')" data-tab="hospedagens" class="nav-btn rounded-full px-5 py-2.5 text-sm font-semibold transition text-foreground/75 hover:bg-sand-deep hover:text-foreground hover:scale-105">Hospedagens</button>
+          <button onclick="mudarTab('agenda')" data-tab="agenda" class="nav-btn rounded-full px-5 py-2.5 text-sm font-semibold transition text-foreground/75 hover:bg-sand-deep hover:text-foreground hover:scale-105">Agenda Cultural</button>
+          <button onclick="mudarTab('gastronomia')" data-tab="gastronomia" class="nav-btn rounded-full px-5 py-2.5 text-sm font-semibold transition text-foreground/75 hover:bg-sand-deep hover:text-foreground hover:scale-105">Gastronomia</button>
+          <button onclick="mudarTab('guias')" data-tab="guias" class="nav-btn rounded-full px-5 py-2.5 text-sm font-semibold transition text-foreground/75 hover:bg-sand-deep hover:text-foreground hover:scale-105">Guias Turísticos</button>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menu" class="lg:hidden flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition hover:bg-sand-deep">
+          <svg id="icon-menu" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav id="mobile-nav" class="hidden lg:hidden border-t border-border/70 bg-sand px-5 pb-5 pt-3 space-y-2 shadow-xl">
+      <button onclick="mudarTab('inicio'); toggleMobileMenu()" data-tab="inicio" class="mobile-nav-btn block w-full text-left rounded-xl px-4 py-3 text-base font-semibold bg-carnauba/10 text-carnauba">Início</button>
+      <button onclick="mudarTab('pontos'); toggleMobileMenu()" data-tab="pontos" class="mobile-nav-btn block w-full text-left rounded-xl px-4 py-3 text-base font-medium text-foreground/80 hover:bg-sand-deep">Pontos Turísticos</button>
+      <button onclick="mudarTab('hospedagens'); toggleMobileMenu()" data-tab="hospedagens" class="mobile-nav-btn block w-full text-left rounded-xl px-4 py-3 text-base font-medium text-foreground/80 hover:bg-sand-deep">Hospedagens</button>
+      <button onclick="mudarTab('agenda'); toggleMobileMenu()" data-tab="agenda" class="mobile-nav-btn block w-full text-left rounded-xl px-4 py-3 text-base font-medium text-foreground/80 hover:bg-sand-deep">Agenda Cultural</button>
+      <button onclick="mudarTab('gastronomia'); toggleMobileMenu()" data-tab="gastronomia" class="mobile-nav-btn block w-full text-left rounded-xl px-4 py-3 text-base font-medium text-foreground/80 hover:bg-sand-deep">Gastronomia</button>
+      <button onclick="mudarTab('guias'); toggleMobileMenu()" data-tab="guias" class="mobile-nav-btn block w-full text-left rounded-xl px-4 py-3 text-base font-medium text-foreground/80 hover:bg-sand-deep">Guias Turísticos</button>
+    </nav>
+  </header>
+
+  <main class="flex-1">
+
+    <!-- TAB 1: INICIO -->
+    <section id="tab-inicio" class="tab-content">
+      <div class="relative isolate overflow-hidden">
+        <img
+          src="./Fotos - Github/Caldeirão - Piripiri.jpg"
+          onerror="this.onerror=null;this.src='./Fotos - Github/caldeiraopiripiri.jpg';if(this.complete&&this.naturalWidth===0){this.src='https://placehold.co/1920x1080/1e5128/ffffff?text=Acude+Caldeirao+-+Piripiri'}"
+          alt="Açude Caldeirão em Piripiri, Piauí"
+          class="absolute inset-0 h-full w-full object-cover"
+        >
+        <div class="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/50 to-foreground/90"></div>
+
+        <div class="relative mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-5 py-28 text-center">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-sand backdrop-blur-md mb-4">
+            Piauí · Brasil
+          </span>
+          <h1 class="font-display text-5xl leading-tight text-sand sm:text-6xl lg:text-7xl font-bold tracking-tight drop-shadow-md">
+            Piripiri Em Rota
+          </h1>
+          <p class="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-sand/95 font-light">
+            Piripiri fica no norte do Piauí, às margens da BR-343, e é conhecida pelas cachoeiras, pelos paredões de arenito, pelas pinturas rupestres e pela força da sua cultura popular. Este é o seu guia definitivo.
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <button onclick="mudarTab('pontos')" class="min-h-14 rounded-full bg-clay px-9 py-4 text-base font-semibold text-sand transition hover:bg-clay/90 hover:scale-105 shadow-xl flex items-center justify-center gap-2">
+              Explorar destinos &rarr;
+            </button>
+            <button onclick="mudarTab('agenda')" class="min-h-14 rounded-full border-2 border-sand/70 bg-transparent px-9 py-4 text-base font-semibold text-sand transition hover:bg-sand/15 hover:scale-105 backdrop-blur-sm flex items-center justify-center">
+              Ver agenda cultural
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrossel Simples -->
+      <section class="bg-sand-deep/60 border-b border-border py-20 lg:py-28 px-5 lg:px-10">
+        <div class="mx-auto max-w-6xl">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-clay font-bold">Destaques da Região</p>
+              <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+                Lugares imperdíveis em Piripiri
+              </h2>
+            </div>
+            <div class="flex items-center gap-3">
+              <button onclick="mudarSlideCarrossel(-1)" aria-label="Anterior" class="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground hover:bg-carnauba hover:text-sand transition shadow-md hover:scale-105 font-bold">
+                &larr;
+              </button>
+              <button onclick="mudarSlideCarrossel(1)" aria-label="Próximo" class="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground hover:bg-carnauba hover:text-sand transition shadow-md hover:scale-105 font-bold">
+                &rarr;
+              </button>
+            </div>
+          </div>
+
+          <div id="carrossel-principal" class="overflow-hidden rounded-3xl border border-border bg-card shadow-xl"></div>
+          <div id="carrossel-miniaturas" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5"></div>
+        </div>
+      </section>
+
+      <!-- Sobre a cidade -->
+      <section class="mx-auto max-w-6xl px-5 py-24 lg:py-32">
+        <div class="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 items-center">
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-clay font-bold">Sobre a cidade</p>
+            <h2 class="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-tight">
+              Um sertão de água, pedra e cultura viva
+            </h2>
+            <div class="mt-6 space-y-5 text-base sm:text-lg leading-relaxed text-foreground/80 font-normal">
+              <p>
+                Piripiri é um dos principais destinos de natureza do norte do Piauí. Entre paredões de arenito, matas e quedas d'água, a cidade virou parada obrigatória de quem viaja pela BR-343 em busca de trilhas e banhos de cachoeira.
+              </p>
+              <p>
+                O roteiro natural inclui a Cachoeira do Bota-Fora, Cachoeira da Jaqueira, Cachoeira do Corrente e o Mini Cânion dos Pilões. A poucos quilômetros está o Parque Nacional de Sete Cidades, com formações rochosas milenares.
+              </p>
+            </div>
+          </div>
+
+          <ul class="space-y-4">
+            <li class="rounded-2xl border border-border bg-card p-7 shadow-sm transition hover:shadow-md hover:border-carnauba/40">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-carnauba/10 text-carnauba font-bold text-xl">🌿</span>
+              <h3 class="mt-4 font-display text-xl text-foreground font-bold">Cachoeiras e trilhas</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Circuitos como Cachoeira do Bota-Fora e Trilha dos Pilões colocam Piripiri entre os melhores roteiros de aventura.</p>
+            </li>
+            <li class="rounded-2xl border border-border bg-card p-7 shadow-sm transition hover:shadow-md hover:border-carnauba/40">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-carnauba/10 text-carnauba font-bold text-xl">🏛️</span>
+              <h3 class="mt-4 font-display text-xl text-foreground font-bold">Cultura e tradição</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Pinturas rupestres, Escadaria da Fé e o Monumento do Pescador contam a história de um povo que preserva suas raízes.</p>
+            </li>
+            <li class="rounded-2xl border border-border bg-card p-7 shadow-sm transition hover:shadow-md hover:border-carnauba/40">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-carnauba/10 text-carnauba font-bold text-xl">🍲</span>
+              <h3 class="mt-4 font-display text-xl text-foreground font-bold">Sabores do sertão</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted-foreground">O pequi, a carne de sol, o baião de dois e a cajuína dão o tom da gastronomia local, celebrada no Festival do Pequi.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Atalhos Seções -->
+      <section class="bg-sand-deep/60 py-24 lg:py-28 border-t border-border">
+        <div class="mx-auto max-w-6xl px-5 lg:px-10">
+          <div class="max-w-2xl mb-12">
+            <p class="text-xs uppercase tracking-[0.3em] text-clay font-bold">Planeje sua visita</p>
+            <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight">Por onde começar</h2>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div onclick="mudarTab('pontos')" class="cursor-pointer group flex flex-col justify-between rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:-translate-y-1.5 hover:border-carnauba/50 hover:shadow-xl">
+              <div>
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-deep text-carnauba font-bold text-xl shadow-inner">📍</span>
+                <h3 class="mt-5 font-display text-2xl text-foreground font-bold">Pontos Turísticos</h3>
+                <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">Cachoeiras, trilhas, patrimônio e experiências locais para explorar.</p>
+              </div>
+              <span class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-clay group-hover:translate-x-1 transition">Acessar &rarr;</span>
+            </div>
+
+            <div onclick="mudarTab('hospedagens')" class="cursor-pointer group flex flex-col justify-between rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:-translate-y-1.5 hover:border-carnauba/50 hover:shadow-xl">
+              <div>
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-deep text-carnauba font-bold text-xl shadow-inner">🛏️</span>
+                <h3 class="mt-5 font-display text-2xl text-foreground font-bold">Hospedagens</h3>
+                <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">Hotéis e pousadas com preços e avaliações reais de quem já se hospedou.</p>
+              </div>
+              <span class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-clay group-hover:translate-x-1 transition">Acessar &rarr;</span>
+            </div>
+
+            <div onclick="mudarTab('agenda')" class="cursor-pointer group flex flex-col justify-between rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:-translate-y-1.5 hover:border-carnauba/50 hover:shadow-xl">
+              <div>
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-deep text-carnauba font-bold text-xl shadow-inner">📅</span>
+                <h3 class="mt-5 font-display text-2xl text-foreground font-bold">Agenda Cultural</h3>
+                <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">Festas, festivais e eventos da cidade — e espaço para divulgar o seu.</p>
+              </div>
+              <span class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-clay group-hover:translate-x-1 transition">Acessar &rarr;</span>
+            </div>
+
+            <div onclick="mudarTab('gastronomia')" class="cursor-pointer group flex flex-col justify-between rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:-translate-y-1.5 hover:border-carnauba/50 hover:shadow-xl">
+              <div>
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-deep text-carnauba font-bold text-xl shadow-inner">🍲</span>
+                <h3 class="mt-5 font-display text-2xl text-foreground font-bold">Gastronomia</h3>
+                <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">Churrascarias, comida regional, bares do Caldeirão e gastrobares.</p>
+              </div>
+              <span class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-clay group-hover:translate-x-1 transition">Acessar &rarr;</span>
+            </div>
+
+            <div onclick="mudarTab('guias')" class="cursor-pointer group flex flex-col justify-between rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:-translate-y-1.5 hover:border-carnauba/50 hover:shadow-xl">
+              <div>
+                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-deep text-carnauba font-bold text-xl shadow-inner">🧭</span>
+                <h3 class="mt-5 font-display text-2xl text-foreground font-bold">Guias Turísticos</h3>
+                <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">Conheça os 10 guias especializados que acompanham visitantes.</p>
+              </div>
+              <span class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-clay group-hover:translate-x-1 transition">Acessar &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- TAB 2: PONTOS TURISTICOS -->
+    <section id="tab-pontos" class="tab-content hidden">
+      <div class="relative isolate overflow-hidden border-b border-border py-24 lg:py-32 px-5 text-center">
+        <img src="./Fotos - Github/Banner dos Pontos Turisticos_2.jpg" onerror="this.onerror=null;this.src='./Fotos - Github/O parque nacional de sete cidades.jpg'" alt="Destinos Turísticos" class="absolute inset-0 h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/90"></div>
+        <div class="relative mx-auto max-w-4xl">
+          <p class="text-xs uppercase tracking-[0.3em] text-sand/90 font-bold mb-3">Explore o Piauí</p>
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-sand tracking-tight">
+            Destinos Turísticos de Piripiri
+          </h2>
+          <p class="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-sand/95">
+            Descubra lugares incríveis, explore as belezas naturais e viva experiências inesquecíveis em Piripiri, no coração do Piauí.
+          </p>
+        </div>
+      </div>
+
+      <div class="py-20 px-5 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-14">
+          <button onclick="filtrarPontos('todos', this)" class="cat-pontos-btn active inline-flex min-h-12 items-center gap-2 rounded-full border border-carnauba bg-carnauba text-sand px-6 py-2.5 text-sm font-semibold transition shadow-sm hover:scale-105" data-cat="todos">Todos os destinos</button>
+          <button onclick="filtrarPontos('natureza_aventura', this)" class="cat-pontos-btn inline-flex min-h-12 items-center gap-2 rounded-full border border-border bg-card text-foreground/75 hover:border-carnauba px-6 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="natureza_aventura">Natureza e Aventura</button>
+          <button onclick="filtrarPontos('historia_cultura', this)" class="cat-pontos-btn inline-flex min-h-12 items-center gap-2 rounded-full border border-border bg-card text-foreground/75 hover:border-carnauba px-6 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="historia_cultura">História e Cultura</button>
+          <button onclick="filtrarPontos('lazer_passeios', this)" class="cat-pontos-btn inline-flex min-h-12 items-center gap-2 rounded-full border border-border bg-card text-foreground/75 hover:border-carnauba px-6 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="lazer_passeios">Lazer e Passeios</button>
+          <button onclick="filtrarPontos('experiencias_locais', this)" class="cat-pontos-btn inline-flex min-h-12 items-center gap-2 rounded-full border border-border bg-card text-foreground/75 hover:border-carnauba px-6 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="experiencias_locais">Experiências Locais</button>
+        </div>
+
+        <div id="grid-pontos" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: HOSPEDAGENS -->
+    <section id="tab-hospedagens" class="tab-content hidden">
+      <div class="relative isolate overflow-hidden border-b border-border py-24 lg:py-32 px-5 text-center">
+        <img src="./Fotos - Github/Caldeirão - Piripiri.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1920x600/2c6b37/ffffff?text=Hospedagens'" alt="Hospedagens" class="absolute inset-0 h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/90"></div>
+        <div class="relative mx-auto max-w-4xl">
+          <p class="text-xs uppercase tracking-[0.3em] text-sand/90 font-bold mb-3">Onde ficar</p>
+          <h2 class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-sand tracking-tight">
+            <span>Hospedagens</span>
+            <span id="count-hospedagens" class="inline-flex h-12 min-w-12 items-center justify-center rounded-full bg-clay px-4 font-sans text-xl font-bold text-sand shadow-lg">3</span>
+          </h2>
+          <p class="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-sand/95">
+            Encontre hotéis e chalés aconchegantes em Piripiri com preços transparentes, comodidades e avaliações reais.
+          </p>
+        </div>
+      </div>
+
+      <div class="py-20 px-5 lg:px-10 max-w-7xl mx-auto">
+        <div id="grid-hospedagens" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: GASTRONOMIA -->
+    <section id="tab-gastronomia" class="tab-content hidden">
+      <div class="relative isolate overflow-hidden border-b border-border py-24 lg:py-32 px-5 text-center">
+        <img src="./Fotos - Github/bannergastronomia.jpg" onerror="this.onerror=null;this.src='./Fotos - Github/Banner da Gastronomia_2.jpg';if(this.complete&&this.naturalWidth===0){this.src='./Fotos - Github/Caldeirão - Piripiri.jpg'}" alt="Gastronomia" class="absolute inset-0 h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/90"></div>
+        <div class="relative mx-auto max-w-4xl">
+          <p class="text-xs uppercase tracking-[0.3em] text-sand/90 font-bold mb-3">Sabores do Piauí</p>
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-sand tracking-tight">
+            Gastronomia em Piripiri
+          </h2>
+          <p class="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-sand/95">
+            Delicie-se com os melhores restaurantes, churrascarias, bares do Caldeirão e pratos típicos da culinária piauiense.
+          </p>
+        </div>
+      </div>
+
+      <div class="py-20 px-5 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between mb-12">
+          <div class="relative w-full lg:max-w-md">
+            <input type="text" id="busca-restaurante" oninput="filtrarGastronomia()" placeholder="Pesquisar restaurante pelo nome..." class="h-14 w-full rounded-full border border-border bg-card pl-6 pr-5 text-sm font-medium focus:outline-none focus:border-carnauba shadow-sm">
+          </div>
+          <div class="hide-scrollbar -mx-1 flex gap-2.5 overflow-x-auto px-1 pb-1">
+            <button onclick="filtrarGastronomiaCat('todos', this)" class="cat-gastronomia-btn active shrink-0 rounded-full border border-carnauba bg-carnauba text-sand px-5 py-2.5 text-sm font-semibold transition shadow-sm hover:scale-105" data-cat="todos">Todos</button>
+            <button onclick="filtrarGastronomiaCat('churrasco', this)" class="cat-gastronomia-btn shrink-0 rounded-full border border-border bg-card text-foreground px-5 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="churrasco">Churrasco</button>
+            <button onclick="filtrarGastronomiaCat('comida_regional', this)" class="cat-gastronomia-btn shrink-0 rounded-full border border-border bg-card text-foreground px-5 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="comida_regional">Comida regional</button>
+            <button onclick="filtrarGastronomiaCat('pizzaria', this)" class="cat-gastronomia-btn shrink-0 rounded-full border border-border bg-card text-foreground px-5 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="pizzaria">Pizzarias</button>
+            <button onclick="filtrarGastronomiaCat('gastrobar', this)" class="cat-gastronomia-btn shrink-0 rounded-full border border-border bg-card text-foreground px-5 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="gastrobar">Gastrobares</button>
+            <button onclick="filtrarGastronomiaCat('caldeirao', this)" class="cat-gastronomia-btn shrink-0 rounded-full border border-border bg-card text-foreground px-5 py-2.5 text-sm font-semibold transition hover:scale-105" data-cat="caldeirao">Caldeirão</button>
+          </div>
+        </div>
+
+        <div id="grid-restaurantes" class="grid gap-8 md:grid-cols-2 lg:grid-cols-2"></div>
+
+        <div class="mt-24 border-t border-border pt-16">
+          <div class="max-w-2xl mb-10">
+            <p class="text-xs uppercase tracking-[0.3em] text-clay font-bold">Roteiro Gastronômico</p>
+            <h3 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight">Gastronomia no Açude Caldeirão</h3>
+            <p class="mt-2.5 text-base text-muted-foreground">Conheça os estabelecimentos tradicionais às margens e arredores do Açude Caldeirão.</p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <article class="rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:shadow-lg">
+              <span class="inline-block rounded-full bg-carnauba/10 px-3.5 py-1 text-xs font-bold text-carnauba mb-3">Caldeirão · Povoado Banda</span>
+              <h4 class="font-display text-2xl font-bold text-foreground">O Restaurante Machado</h4>
+              <p class="mt-3 text-sm sm:text-base leading-relaxed text-foreground/80">
+                Localizado no Povoado Banda, próximo ao Açude Caldeirão, o Restaurante O Machado é um estabelecimento de perfil regional, associado à culinária local e ao churrasco.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:shadow-lg">
+              <span class="inline-block rounded-full bg-carnauba/10 px-3.5 py-1 text-xs font-bold text-carnauba mb-3">Caldeirão · Povoado Banda</span>
+              <h4 class="font-display text-2xl font-bold text-foreground">Balneário Águas Espraiadas</h4>
+              <p class="mt-3 text-sm sm:text-base leading-relaxed text-foreground/80">
+                Às margens do Açude Caldeirão, reúne lazer e gastronomia com destaque para o peixe frito acompanhado de baião de dois, pirão, salada e farofa.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:shadow-lg">
+              <span class="inline-block rounded-full bg-carnauba/10 px-3.5 py-1 text-xs font-bold text-carnauba mb-3">Região do Caldeirão</span>
+              <h4 class="font-display text-2xl font-bold text-foreground">Rancho Guarita</h4>
+              <p class="mt-3 text-sm sm:text-base leading-relaxed text-foreground/80">
+                Espaço de lazer localizado na zona rural em Piripiri, combinando gastronomia com estrutura ideal para momentos de descanso e lazer em família.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-border bg-card p-7 shadow-sm transition hover:shadow-lg">
+              <span class="inline-block rounded-full bg-carnauba/10 px-3.5 py-1 text-xs font-bold text-carnauba mb-3">Lazer e Gastronomia</span>
+              <h4 class="font-display text-2xl font-bold text-foreground">Park &amp; Resort Maná</h4>
+              <p class="mt-3 text-sm sm:text-base leading-relaxed text-foreground/80">
+                Espaço voltado ao lazer e à gastronomia em Piripiri, oferecendo opções completas de refeições e bebidas em ambiente descontraído.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: AGENDA CULTURAL -->
+    <section id="tab-agenda" class="tab-content hidden">
+      <div class="relative isolate overflow-hidden border-b border-border py-24 lg:py-32 px-5 text-center">
+        <img src="./Fotos - Github/Banneragendacultural.webp" onerror="this.onerror=null;this.src='./Fotos - Github/Banner da Agenda Cultural de Piripiri_3.jpeg'" alt="Agenda Cultural" class="absolute inset-0 h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/90"></div>
+        <div class="relative mx-auto max-w-4xl">
+          <p class="text-xs uppercase tracking-[0.3em] text-sand/90 font-bold mb-3">Cultura e Tradição</p>
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-sand tracking-tight">
+            Agenda Cultural
+          </h2>
+          <p class="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-sand/95">
+            Fique por dentro dos principais festivais e eventos tradicionais de Piripiri.
+          </p>
+          <div class="mt-9">
+            <button onclick="abrirModalEvento()" class="inline-flex min-h-13 items-center gap-2 rounded-full bg-clay px-8 py-4 text-base font-semibold text-sand hover:bg-clay/90 shadow-xl transition hover:scale-105">
+              + Adicionar evento cultural
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-20 px-5 lg:px-10 max-w-7xl mx-auto">
+        <div id="grid-eventos" class="grid gap-8 md:grid-cols-2"></div>
+      </div>
+    </section>
+
+    <!-- TAB 6: GUIAS TURISTICOS -->
+    <section id="tab-guias" class="tab-content hidden">
+      <div class="relative isolate overflow-hidden border-b border-border py-24 lg:py-32 px-5 text-center">
+        <img src="./Fotos - Github/bannerguias.avif" onerror="this.onerror=null;this.src='./Fotos - Github/Banner dos Guias Turisticos_2.jpg';if(this.complete&&this.naturalWidth===0){this.src='./Fotos - Github/Trilha dos Pilões - Piripiri.jpg'}" alt="Guias Turísticos" class="absolute inset-0 h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground/90"></div>
+        <div class="relative mx-auto max-w-4xl">
+          <p class="text-xs uppercase tracking-[0.3em] text-sand/90 font-bold mb-3">Acompanhamento Especializado</p>
+          <h2 class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-sand tracking-tight">
+            <span>Guias Turísticos</span>
+            <span id="count-guias" class="inline-flex h-12 min-w-12 items-center justify-center rounded-full bg-clay px-4 font-sans text-xl font-bold text-sand shadow-lg">10</span>
+          </h2>
+          <p class="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-sand/95">
+            Conheça os profissionais credenciados que acompanham visitantes pelas trilhas, cachoeiras e roteiros históricos de Piripiri.
+          </p>
+        </div>
+      </div>
+
+      <div class="py-20 px-5 lg:px-10 max-w-7xl mx-auto">
+        <div id="grid-guias" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Adicionar / Editar Evento -->
+  <div id="modal-evento" onclick="if(event.target===this) fecharModalEvento()" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+    <div class="bg-card w-full max-w-lg rounded-3xl border border-border p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-border pb-5 mb-5">
+        <h3 id="modal-evento-titulo" class="font-display text-2xl font-bold text-foreground">Adicionar evento</h3>
+        <button onclick="fecharModalEvento()" aria-label="Fechar" class="text-muted-foreground hover:text-foreground text-3xl leading-none">&times;</button>
+      </div>
+      <form id="form-novo-evento" onsubmit="salvarEvento(event)" class="space-y-5">
+        <input type="hidden" id="ev-id" value="">
+        <div>
+          <label class="block text-sm font-semibold mb-2">Nome do evento *</label>
+          <input type="text" id="ev-nome" required placeholder="Ex.: Festival Cultural" class="w-full rounded-xl border border-border bg-sand/50 px-4 py-3 text-sm focus:outline-none focus:border-carnauba">
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label class="block text-sm font-semibold mb-2">Data</label>
+            <input type="date" id="ev-data" class="w-full rounded-xl border border-border bg-sand/50 px-4 py-3 text-sm focus:outline-none focus:border-carnauba">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2">Local</label>
+            <input type="text" id="ev-local" placeholder="Ex.: Praça da Bandeira" class="w-full rounded-xl border border-border bg-sand/50 px-4 py-3 text-sm focus:outline-none focus:border-carnauba">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-2">Descrição</label>
+          <textarea id="ev-desc" rows="3" placeholder="Conte como será o evento..." class="w-full rounded-xl border border-border bg-sand/50 px-4 py-3 text-sm focus:outline-none focus:border-carnauba"></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-2">Foto do evento <span id="ev-foto-hint" class="text-xs font-normal text-muted-foreground"></span></label>
+          <input type="file" id="ev-foto" accept="image/*" class="w-full text-sm file:mr-4 file:rounded-full file:border-0 file:bg-carnauba/10 file:px-4 file:py-2.5 file:text-xs file:font-semibold file:text-carnauba hover:file:bg-carnauba/20">
+        </div>
+        <div class="flex gap-4 pt-3">
+          <button type="button" onclick="fecharModalEvento()" class="w-1/2 rounded-full border border-border py-3.5 text-sm font-semibold hover:bg-sand-deep transition">Cancelar</button>
+          <button type="submit" class="w-1/2 rounded-full bg-carnauba py-3.5 text-sm font-semibold text-sand hover:bg-carnauba/90 transition shadow-md">Salvar Evento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Confirmar Remoção de Evento -->
+  <div id="modal-remover-evento" onclick="if(event.target===this) fecharModalRemoverEvento()" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+    <div class="bg-card w-full max-w-md rounded-3xl border border-border p-8 shadow-2xl text-center">
+      <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-red-100 text-red-600 text-2xl font-bold">🗑️</div>
+      <h3 class="font-display text-2xl font-bold text-foreground">Remover evento?</h3>
+      <p id="remover-evento-texto" class="mt-2.5 text-sm leading-relaxed text-muted-foreground">Tem certeza que deseja excluir este evento da agenda cultural?</p>
+      <div class="mt-7 flex gap-3">
+        <button type="button" onclick="fecharModalRemoverEvento()" class="w-1/2 rounded-full border border-border py-3 text-sm font-semibold text-foreground hover:bg-sand-deep transition">Cancelar</button>
+        <button type="button" id="btn-confirmar-remocao" class="w-1/2 rounded-full bg-red-600 py-3 text-sm font-semibold text-white hover:bg-red-700 transition shadow-md">Sim, remover</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Contato Guia Turístico -->
+  <div id="modal-guia" onclick="if(event.target===this) fecharModalGuia()" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+    <div class="bg-card w-full max-w-md rounded-3xl border border-border p-8 shadow-2xl relative">
+      <button onclick="fecharModalGuia()" aria-label="Fechar" class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-sand-deep text-foreground hover:bg-border transition font-bold text-lg">&times;</button>
+      <div id="modal-guia-conteudo"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-28 border-t border-border bg-carnauba text-sand">
+    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-10">
+      <div class="grid gap-12 md:grid-cols-3">
+        <div>
+          <p class="font-display text-2xl font-bold tracking-tight">Piripiri em Rota</p>
+          <p class="mt-3 max-w-xs text-sm leading-relaxed text-sand/80 font-light">
+            Um convite para descobrir as cachoeiras, a cultura, os sabores e a hospitalidade de Piripiri, no coração do Piauí.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-[0.25em] text-sand/60 font-bold">Navegue</p>
+          <ul class="mt-4 space-y-2.5 text-sm font-medium">
+            <li><button onclick="mudarTab('pontos')" class="text-sand/85 transition hover:text-sand hover:translate-x-1 inline-block">Pontos Turísticos</button></li>
+            <li><button onclick="mudarTab('hospedagens')" class="text-sand/85 transition hover:text-sand hover:translate-x-1 inline-block">Hospedagens</button></li>
+            <li><button onclick="mudarTab('agenda')" class="text-sand/85 transition hover:text-sand hover:translate-x-1 inline-block">Agenda Cultural</button></li>
+            <li><button onclick="mudarTab('gastronomia')" class="text-sand/85 transition hover:text-sand hover:translate-x-1 inline-block">Gastronomia</button></li>
+            <li><button onclick="mudarTab('guias')" class="text-sand/85 transition hover:text-sand hover:translate-x-1 inline-block">Guias Turísticos</button></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-[0.25em] text-sand/60 font-bold">Contato</p>
+          <ul class="mt-4 space-y-3 text-sm text-sand/85 font-light">
+            <li>📍 Piripiri — Piauí, Brasil</li>
+            <li>✉️ Secretaria de Turismo de Piripiri</li>
+            <li>📷 @piripiriemrota</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-14 flex flex-col gap-3 border-t border-sand/20 pt-8 text-xs text-sand/60 sm:flex-row sm:items-center sm:justify-between font-light">
+        <p>&copy; 2026 Piripiri em Rota — turismo, cultura e natureza.</p>
+        <p>Feito com carinho no Piauí.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    const lugaresImperdiveisData = [
+      {
+        nome: "Açude Caldeirão",
+        imagem: "./Fotos - Github/Caldeirão - Piripiri.jpg",
+        fallback: "https://placehold.co/1000x600/1e5128/ffffff?text=Acude+Caldeirao",
+        descricao: "Um dos principais cartões-postais da cidade, com belas paisagens, bares, restaurantes e um ambiente ideal para aproveitar momentos de lazer."
+      },
+      {
+        nome: "Mini Cânion dos Pilões",
+        imagem: "./Fotos - Github/Mini Cânion dos Pilões.jpg",
+        fallback: "https://placehold.co/1000x600/2c6b37/ffffff?text=Mini+Canion+dos+Piloes",
+        descricao: "Um cenário impressionante de formações rochosas esculpidas pela natureza, com paisagens que encantam os amantes do ecoturismo."
+      },
+      {
+        nome: "Cachoeira Birindibas",
+        imagem: "./Fotos - Github/Cachoeira Birindibas.jpg",
+        fallback: "https://placehold.co/1000x600/38a169/ffffff?text=Cachoeira+Birindibas",
+        descricao: "Um cantinho especial da natureza, conhecido por suas pequenas cascatas e piscinas naturais."
+      },
+      {
+        nome: "Cachoeira do Bota-Fora",
+        imagem: "./Fotos - Github/Cachoeira do Bota-Fora.jpg",
+        fallback: "https://placehold.co/1000x600/1e5128/ffffff?text=Cachoeira+do+Bota-Fora",
+        descricao: "Um refúgio cercado por vegetação nativa e águas correntes, perfeito para contemplar a natureza."
+      },
+      {
+        nome: "Complexo Turístico Buriti dos Cavalos",
+        imagem: "./Fotos - Github/Sitio arqueologico Buriti dos Cavalos - Piripiri.jpg",
+        fallback: "https://placehold.co/1000x600/8b4513/ffffff?text=Buriti+dos+Cavalos",
+        descricao: "Uma região de grande riqueza natural e arqueológica, com formações rochosas, trilhas e paisagens surpreendentes."
+      },
+      {
+        nome: "Parque Nacional de Sete Cidades",
+        imagem: "./Fotos - Github/O parque nacional de sete cidades.jpg",
+        fallback: "https://placehold.co/1000x600/a0522d/ffffff?text=Sete+Cidades",
+        descricao: "Sendo próximo de Piripiri, localizado entre Brasileira e Piracuruca, o Parque Nacional de Sete Cidades é um dos maiores tesouros naturais do Piauí."
+      }
+    ];
+
+    let slideAtual = 0;
+
+    function renderCarrossel() {
+      const item = lugaresImperdiveisData[slideAtual];
+      const principal = document.getElementById('carrossel-principal');
+      const miniaturas = document.getElementById('carrossel-miniaturas');
+      if (!principal || !miniaturas) return;
+
+      principal.innerHTML = `
+        <div class="grid lg:grid-cols-[1.2fr_1fr]">
+          <div class="relative aspect-[16/10] lg:aspect-auto lg:min-h-[400px] overflow-hidden bg-sand-deep">
+            <img src="${item.imagem}" onerror="this.onerror=null;this.src='${item.fallback}'" alt="${item.nome}" class="h-full w-full object-cover transition duration-500">
+            <span class="absolute left-4 top-4 rounded-full bg-carnauba/90 px-4 py-1 text-xs font-bold text-sand backdrop-blur shadow-md">
+              ${slideAtual + 1} / ${lugaresImperdiveisData.length}
+            </span>
+          </div>
+          <div class="flex flex-col justify-center p-8 sm:p-12">
+            <span class="text-xs uppercase tracking-[0.3em] text-clay font-bold">Destino em Destaque</span>
+            <h3 class="mt-2 font-display text-2xl sm:text-3xl font-bold text-foreground">${item.nome}</h3>
+            <p class="mt-4 text-sm sm:text-base leading-relaxed text-foreground/80">${item.descricao}</p>
+            <div class="mt-8">
+              <button onclick="mudarTab('pontos')" class="inline-flex items-center gap-2 rounded-full bg-carnauba px-6 py-3 text-sm font-semibold text-sand hover:bg-carnauba/90 transition hover:scale-105 shadow-md">
+                Ver todos os pontos turísticos &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      miniaturas.innerHTML = lugaresImperdiveisData.map((lug, idx) => `
+        <button
+          type="button"
+          onclick="selecionarSlideCarrossel(${idx})"
+          class="group flex flex-col overflow-hidden rounded-2xl border text-left transition hover:scale-105 ${
+            idx === slideAtual
+              ? 'border-carnauba bg-card ring-2 ring-carnauba/30 shadow-md'
+              : 'border-border bg-card/80 opacity-85 hover:opacity-100'
+          }"
+        >
+          <div class="aspect-square w-full overflow-hidden bg-sand-deep">
+            <img src="${lug.imagem}" onerror="this.onerror=null;this.src='${lug.fallback}'" alt="${lug.nome}" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
+          </div>
+          <div class="p-3">
+            <p class="line-clamp-2 text-xs font-bold leading-snug text-foreground">${lug.nome}</p>
+          </div>
+        </button>
+      `).join('');
+    }
+
+    function mudarSlideCarrossel(delta) {
+      slideAtual = (slideAtual + delta + lugaresImperdiveisData.length) % lugaresImperdiveisData.length;
+      renderCarrossel();
+    }
+
+    function selecionarSlideCarrossel(indice) {
+      slideAtual = indice;
+      renderCarrossel();
+    }
+
+    const CATEGORIAS_LABELS = {
+      natureza_aventura: "Natureza e Aventura",
+      historia_cultura: "História e Cultura",
+      lazer_passeios: "Lazer e Passeios",
+      experiencias_locais: "Experiências Locais"
+    };
+
+    const pontosTuristicosData = [
+      { id: 1, nome: "Caldeirão", categoria: "lazer_passeios", imagem: "./Fotos - Github/Caldeirão - Piripiri.jpg", fallback: "https://placehold.co/600x450/1e5128/ffffff?text=Acude+Caldeirao", resumo: "Principal cartão-postal de Piripiri, com balneários e bela vista.", descricao: "Um dos principais cartões-postais da cidade, com belas paisagens, bares, restaurantes e um ambiente ideal para aproveitar momentos de lazer.", localizacao: "Povoado Banda / Zona Rural, Piripiri - PI", distancia: "9 km do centro" },
+      { id: 2, nome: "Cachoeira do Bota-Fora", categoria: "natureza_aventura", imagem: "./Fotos - Github/Cachoeira do Bota-Fora.jpg", fallback: "https://placehold.co/600x450/1e5128/ffffff?text=Cachoeira+do+Bota-Fora", resumo: "Queda d'água cercada por vegetação nativa e paredões.", descricao: "Um refúgio cercado por vegetação nativa e águas correntes, perfeito para contemplar a natureza.", localizacao: "Zona Rural, Piripiri - PI", distancia: "18 km do centro" },
+      { id: 3, nome: "Cachoeira da Jaqueira", categoria: "natureza_aventura", imagem: "./Fotos - Github/Cachoeira da Tuncas - Corrente.jpg", fallback: "https://placehold.co/600x450/2c6b37/ffffff?text=Cachoeira+da+Jaqueira", resumo: "Águas cristalinas em meio à mata preservada.", descricao: "Destino muito procurado para banho e trilhas leves na região rural de Piripiri.", localizacao: "Zona Rural, Piripiri - PI", distancia: "16 km do centro" },
+      { id: 5, nome: "Cachoeira Birindibas", categoria: "natureza_aventura", imagem: "./Fotos - Github/Cachoeira Birindibas.jpg", fallback: "https://placehold.co/600x450/38a169/ffffff?text=Cachoeira+Birindibas", resumo: "Pequenas cascatas e piscinas naturais tranquilas.", descricao: "Um cantinho especial da natureza, conhecido por suas pequenas cascatas e piscinas naturais.", localizacao: "Zona Rural, Piripiri - PI", distancia: "14 km do centro" },
+      { id: 6, nome: "Mini Cânion dos Pilões", categoria: "natureza_aventura", imagem: "./Fotos - Github/Mini Cânion dos Pilões.jpg", fallback: "https://placehold.co/600x450/2c6b37/ffffff?text=Mini+Canion+dos+Piloes", resumo: "Formações rochosas esculpidas pelas águas e pelo tempo.", descricao: "Um cenário impressionante de formações rochosas esculpidas pela natureza, com paisagens que encantam.", localizacao: "Trilha dos Pilões, Piripiri - PI", distancia: "20 km do centro" },
+      { id: 7, nome: "Complexo Turístico Buriti dos Cavalos", categoria: "historia_cultura", imagem: "./Fotos - Github/Sitio arqueologico Buriti dos Cavalos - Piripiri.jpg", fallback: "https://placehold.co/600x450/8b4513/ffffff?text=Buriti+dos+Cavalos", resumo: "Riqueza arqueológica, pinturas rupestres e trilhas.", descricao: "Uma região de grande riqueza natural e arqueológica, com formações rochosas e trilhas.", localizacao: "Buriti dos Cavalos, Piripiri - PI", distancia: "22 km do centro" },
+      { id: 8, nome: "Parque Nacional de Sete Cidades", categoria: "natureza_aventura", imagem: "./Fotos - Github/O parque nacional de sete cidades.jpg", fallback: "https://placehold.co/600x450/a0522d/ffffff?text=Sete+Cidades", resumo: "Formações rochosas milenares e pinturas rupestres.", descricao: "Sendo próximo de Piripiri, localizado entre Brasileira e Piracuruca, é um dos maiores tesouros naturais do Piauí.", localizacao: "BR-222 (Próximo a Piripiri - PI)", distancia: "26 km do centro" }
+    ];
+
+    const TIPOS_HOSPEDAGEM = { hotel: "Hotel", pousada: "Pousada", chales: "Chalés" };
+
+    const hospedagensData = [
+      { id: 2, nome: "Califórnia Hotel", tipo: "hotel", preco: 140, avaliacao: 4.7, total: 104, estrelas: 3, imagem: "./Fotos - Github/California Hotel.jpg", fallback: "https://placehold.co/600x450/b45309/ffffff?text=California+Hotel", descricao: "Praticidade, quartos confortáveis e localização privilegiada próxima às principais vias.", comodidades: ["Wi-Fi Grátis", "Estacionamento", "Café da Manhã", "Recepção 24h"], localizacao: "Av. Aderson Ferreira, Piripiri - PI", maps: "https://www.google.com/maps/search/?api=1&query=California+Hotel+Piripiri+PI" },
+      { id: 3, nome: "Hotel Imperial", tipo: "hotel", preco: 165, avaliacao: 4.8, total: 142, estrelas: 3, imagem: "./Fotos - Github/Hotel Imperial.jpg", fallback: "https://placehold.co/600x450/1e5128/ffffff?text=Hotel+Imperial", descricao: "Conforto e excelente localização no centro de Piripiri, ideal para lazer e negócios.", comodidades: ["Wi-Fi Grátis", "Café da Manhã", "Ar-condicionado", "Estacionamento"], localizacao: "Centro, Piripiri - PI", maps: "https://www.google.com/maps/search/?api=1&query=Hotel+Imperial+Piripiri+PI" },
+      { id: 5, nome: "Bom Cheff Hotel & Chalés", tipo: "chales", preco: 220, avaliacao: 4.9, total: 188, estrelas: 4, imagem: "./Fotos - Github/BomCheff Hotel e chales.jpg", fallback: "https://placehold.co/600x450/8b4513/ffffff?text=BomCheff+Hotel+e+Chales", descricao: "Chalés modernos e exclusivos combinados com excelente gastronomia e conforto superior.", comodidades: ["Chalés Privativos", "Wi-Fi Grátis", "Restaurante", "Café da Manhã"], localizacao: "Piripiri - PI", maps: "https://www.google.com/maps/search/?api=1&query=Bom+Cheff+Hotel+Piripiri+PI" }
+    ];
+
+    const restaurantesData = [
+      { id: 1, nome: "Churrascaria Chimarrão", categoria: "churrasco", imagem: "./Fotos - Github/Churrascaria Chimarrão.webp", fallback: "https://placehold.co/600x400/991b1b/ffffff?text=Chimarrao", avaliacao: 4.9, total: 320, descricao: "Ambiente tradicional excelente para carnes nobres e atendimento de primeira.", prato_destaque: "Picanha na brasa com macaxeira", endereco: "Av. Principal, Piripiri - PI" },
+      { id: 2, nome: "Espaço Castanhola", categoria: "comida_regional", imagem: "./Fotos - Github/restauranteCastanhola.jpg", fallback: "https://placehold.co/600x400/b45309/ffffff?text=Castanhola", avaliacao: 4.8, total: 215, descricao: "Culinária nordestina autêntica e pratos à base de pequi e carne de sol.", prato_destaque: "Galinha caipira com pirão", endereco: "Centro, Piripiri - PI" },
+      { id: 3, nome: "Restaurante Cotonete", categoria: "gastrobar", imagem: "./Fotos - Github/restaurantecotonete.webp", fallback: "https://placehold.co/600x400/1e40af/ffffff?text=Cotonete", avaliacao: 4.7, total: 180, descricao: "Ambiente descontraído, petiscos variados e cerveja gelada.", prato_destaque: "Camarão ao alho e óleo", endereco: "Zona Urbana, Piripiri - PI" },
+      { id: 4, nome: "BomCheff Gastrobar", categoria: "gastrobar", imagem: "./Fotos - Github/Bomcheff.jpg", fallback: "https://placehold.co/600x400/047857/ffffff?text=BomCheff", avaliacao: 4.9, total: 290, descricao: "Alta gastronomia e drinks artesanais com toque regional.", prato_destaque: "Hambúrguer artesanal com geleia de pimenta", endereco: "Piripiri - PI" },
+      { id: 5, nome: "Restaurante Machado", categoria: "caldeirao", imagem: "./Fotos - Github/Machado.jpg", fallback: "https://placehold.co/600x400/1e5128/ffffff?text=Restaurante+Machado", avaliacao: 4.7, total: 145, descricao: "Localizado no Povoado Banda, próximo ao Açude Caldeirão, com perfil regional e churrasco.", prato_destaque: "Churrasco regional e baião de dois", endereco: "Povoado Banda, Açude Caldeirão - Piripiri, PI" },
+      { id: 6, nome: "Águas Espraiadas", categoria: "caldeirao", imagem: "./Fotos - Github/Aguas Espraiadas.jpg", fallback: "https://placehold.co/600x400/1e5128/ffffff?text=Aguas+Espraiadas", avaliacao: 4.8, total: 260, descricao: "Às margens do Açude Caldeirão, no Povoado Banda, reúne lazer, bar e restaurante com comidas regionais.", prato_destaque: "Peixe frito com baião de dois, pirão, salada e farofa", endereco: "Margens do Açude Caldeirão, Povoado Banda - Piripiri, PI" },
+      { id: 7, nome: "Rancho Guarita", categoria: "caldeirao", imagem: "./Fotos - Github/Rancho Guarita.jpg", fallback: "https://placehold.co/600x400/1e5128/ffffff?text=Rancho+Guarita", avaliacao: 4.6, total: 112, descricao: "Espaço de lazer na zona rural na região do Caldeirão, combinando gastronomia, bar e descanso.", prato_destaque: "Petiscos regionais e pratos típicos", endereco: "Região do Caldeirão, Zona Rural - Piripiri, PI" },
+      { id: 8, nome: "Park & Resort Maná", categoria: "caldeirao", imagem: "./Fotos - Github/Caldeirão - Piripiri.jpg", fallback: "https://placehold.co/600x400/1e5128/ffffff?text=Resort+Mana", avaliacao: 4.7, total: 198, descricao: "Espaço voltado ao lazer e à gastronomia em Piripiri, com opções variadas de refeições e bebidas.", prato_destaque: "Refeições completas e drinks refrescantes", endereco: "Piripiri - PI" }
+    ];
+
+    const guiasData = [
+      { id: 1, nome: "Antônio", sigla: "BR", pais: "Brasil", whatsapp: "(86) 99911-0101", instagram: "@antonio.trilhaspi", bio: "Guia nativo de Piripiri com 12 anos de experiência em trilhas ecológicas, Cachoeira do Bota-Fora e Parque Nacional de Sete Cidades.", foto: "./Fotos - Github/antonio.jpg" },
+      { id: 2, nome: "Julia", sigla: "PT", pais: "Portugal", whatsapp: "(86) 99922-0202", instagram: "@julia.rotaspi", bio: "Especialista em turismo cultural e histórico, conduzindo visitantes pelos monumentos e sítios arqueológicos.", foto: "./Fotos - Github/julia.jpg" },
+      { id: 3, nome: "Yanara", sigla: "ES", pais: "Espanha", whatsapp: "(86) 99933-0303", instagram: "@yanara.ecotur", bio: "Bióloga e guia bilíngue apaixonada pela biodiversidade do cerrado piauiense e observação de aves.", foto: "./Fotos - Github/yanara.jpg" },
+      { id: 4, nome: "Januário", sigla: "BR", pais: "Brasil", whatsapp: "(86) 99944-0404", instagram: "@januario.aventura", bio: "Condutor especializado em rapel, caminhadas no Mini Cânion dos Pilões e expedições fotográficas.", foto: "./Fotos - Github/januario.jpg" },
+      { id: 5, nome: "Rebeca", sigla: "US", pais: "Estados Unidos", whatsapp: "(86) 99955-0505", instagram: "@rebeca.piripiritours", bio: "Guia receptiva bilíngue, focada em roteiros personalizados para famílias e turistas internacionais.", foto: "./Fotos - Github/rebeca.jpg" },
+      { id: 6, nome: "Suarez", sigla: "AR", pais: "Argentina", whatsapp: "(86) 99966-0606", instagram: "@suarez.guiapi", bio: "Guia de aventura e cicloturismo, explorando estradas rurais, cachoeiras e o Complexo Buriti dos Cavalos.", foto: "./Fotos - Github/suarez.jpg" },
+      { id: 7, nome: "Jorge", sigla: "CL", pais: "Chile", whatsapp: "(86) 99977-0707", instagram: "@jorge.trekkingpi", bio: "Especialista em trekking e geologia, explicando as formações de arenito e pinturas rupestres.", foto: "./Fotos - Github/jorge.jpg" },
+      { id: 8, nome: "Yasmin", sigla: "FR", pais: "França", whatsapp: "(86) 99988-0808", instagram: "@yasmin.saborespi", bio: "Guia cultural e gastronômica, conectando visitantes aos produtores de pequi, cajuína e artesanato.", foto: "./Fotos - Github/yasmin.jpg" },
+      { id: 9, nome: "Vitória", sigla: "IT", pais: "Itália", whatsapp: "(86) 99999-0909", instagram: "@vitoria.descubrapi", bio: "Condutora turística com foco em passeios tranquilos, balneários e roteiros ao pôr do sol.", foto: "./Fotos - Github/vitoria.jpg" },
+      { id: 10, nome: "Russell", sigla: "DE", pais: "Alemanha", whatsapp: "(86) 99910-1010", instagram: "@russell.naturepi", bio: "Guia trilíngue dedicado ao ecoturismo sustentável e expedições guiadas pelas cachoeiras.", foto: "./Fotos - Github/Russell.jpg" }
+    ];
+
+    let eventosData = JSON.parse(localStorage.getItem('piripiri_eventos')) || [
+      {
+        id: 1,
+        nome: "Feira Cultural (FECAP)",
+        data: "2026-08-10",
+        local: "Centro de Piripiri - PI",
+        descricao: "Organização de feira cultural com artesanato, economia criativa, saraus poéticos e apresentações musicais.",
+        imagens: ["./Fotos - Github/FECAPI Cultural Fair Banner.png"]
+      },
+      {
+        id: 2,
+        nome: "Piripiri Junina – Tradição e Cultura Nordestina.",
+        data: "2026-06-24",
+        local: "Praça de Eventos, Piripiri - PI",
+        descricao: "Tradicional festival de quadrilhas juninas, apresentações folclóricas, comidas típicas e muito forró.",
+        imagens: ["./Fotos - Github/piripiri junina.jpg"]
+      },
+      {
+        id: 3,
+        nome: "PirifFolia",
+        data: "2026-09-12",
+        local: "Avenida Principal, Piripiri - PI",
+        descricao: "O maior carnaval fora de época da região, reunindo grandes atrações musicais, trios elétricos e milhares de foliões.",
+        imagens: ["./Fotos - Github/PiriFolia (2).png"]
+      }
+    ];
+
+    function mudarTab(tabName, updateHash = true) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById(`tab-${tabName}`);
+      if (target) target.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.dataset.tab === tabName) {
+          btn.classList.add('bg-carnauba', 'text-sand', 'shadow-sm');
+          btn.classList.remove('text-foreground/75', 'hover:bg-sand-deep');
+        } else {
+          btn.classList.remove('bg-carnauba', 'text-sand', 'shadow-sm');
+          btn.classList.add('text-foreground/75', 'hover:bg-sand-deep');
+        }
+      });
+
+      document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+        if (btn.dataset.tab === tabName) {
+          btn.classList.add('bg-carnauba/10', 'text-carnauba', 'font-semibold');
+          btn.classList.remove('text-foreground/80');
+        } else {
+          btn.classList.remove('bg-carnauba/10', 'text-carnauba', 'font-semibold');
+          btn.classList.add('text-foreground/80');
+        }
+      });
+
+      if (updateHash) {
+        history.replaceState(null, '', `#${tabName}`);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const nav = document.getElementById('mobile-nav');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      nav.classList.toggle('hidden');
+      iconMenu.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    }
+
+    function gerarEstrelas(nota) {
+      const cheias = Math.round(nota);
+      let html = '';
+      for (let i = 1; i <= 5; i++) {
+        html += `<span class="${i <= cheias ? 'text-amber-400' : 'text-border'} text-base">&#9733;</span>`;
+      }
+      return html;
+    }
+
+    function renderPontos(filtro = 'todos') {
+      const grid = document.getElementById('grid-pontos');
+      const filtrados = filtro === 'todos' ? pontosTuristicosData : pontosTuristicosData.filter(p => p.categoria === filtro);
+
+      grid.innerHTML = filtrados.map(p => {
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.nome + ' Piripiri PI')}`;
+        return `
+        <article class="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-500 hover:-translate-y-1.5 hover:shadow-2xl">
+          <div class="relative aspect-[16/10] overflow-hidden bg-sand-deep">
+            <img src="${p.imagem}" onerror="this.onerror=null;this.src='${p.fallback || 'https://placehold.co/600x450/1e5128/ffffff?text=Piripiri'}'" alt="${p.nome}" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent"></div>
+            <span class="absolute left-3.5 top-3.5 rounded-full bg-sand/95 px-3.5 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-carnauba backdrop-blur shadow-md">
+              ${CATEGORIAS_LABELS[p.categoria] || 'Piripiri'}
+            </span>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="font-display text-2xl leading-snug text-sand font-bold drop-shadow-md">${p.nome}</h3>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col p-6 sm:p-7">
+            ${p.resumo ? `<p class="text-sm leading-relaxed text-muted-foreground">${p.resumo}</p>` : ''}
+            ${p.descricao ? `<p class="mt-3 text-sm leading-relaxed text-foreground/80">${p.descricao}</p>` : ''}
+
+            <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-muted-foreground">
+              ${p.localizacao ? `<span class="inline-flex items-center gap-1.5">📍 ${p.localizacao}</span>` : ''}
+              ${p.distancia ? `<span class="inline-flex items-center gap-1.5">📏 ${p.distancia}</span>` : ''}
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-border/60">
+              <a href="${mapsUrl}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full border border-carnauba/30 px-5 py-2.5 text-sm font-semibold text-carnauba transition hover:bg-carnauba hover:text-sand hover:scale-105">
+                🧭 Ver no mapa
+              </a>
+            </div>
+          </div>
+        </article>
+      `}).join('');
+    }
+
+    function filtrarPontos(cat, btn) {
+      document.querySelectorAll('.cat-pontos-btn').forEach(b => {
+        b.classList.remove('bg-carnauba', 'text-sand', 'border-carnauba', 'shadow-sm');
+        b.classList.add('bg-card', 'text-foreground/75', 'border-border');
+      });
+      btn.classList.add('bg-carnauba', 'text-sand', 'border-carnauba', 'shadow-sm');
+      btn.classList.remove('bg-card', 'text-foreground/75', 'border-border');
+      renderPontos(cat);
+    }
+
+    function renderHospedagens() {
+      document.getElementById('count-hospedagens').innerText = hospedagensData.length;
+      const grid = document.getElementById('grid-hospedagens');
+      grid.innerHTML = hospedagensData.map(h => `
+        <article class="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition duration-500 hover:-translate-y-1.5 hover:shadow-2xl">
+          <div class="relative aspect-[16/10] overflow-hidden bg-sand-deep">
+            <img src="${h.imagem}" onerror="this.onerror=null;this.src='${h.fallback}'" alt="${h.nome}" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent"></div>
+            <span class="absolute right-3.5 top-3.5 rounded-2xl bg-clay px-3.5 py-1.5 text-sm font-bold text-sand shadow-lg">
+              R$ ${h.preco.toLocaleString('pt-BR')}
+              <span class="ml-1 text-[0.65rem] font-normal uppercase tracking-wide text-sand/90">/noite</span>
+            </span>
+            <span class="absolute left-3.5 top-3.5 rounded-full bg-sand/95 px-3.5 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-carnauba backdrop-blur shadow-md">
+              ${TIPOS_HOSPEDAGEM[h.tipo] || 'Hospedagem'}
+            </span>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2">
+              <h3 class="font-display text-2xl leading-snug text-sand font-bold drop-shadow-md">${h.nome}</h3>
+              <span class="text-amber-400 text-base font-bold tracking-wider drop-shadow" title="${h.estrelas} estrelas">${'★'.repeat(h.estrelas)}</span>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col p-6 sm:p-7">
+            ${h.descricao ? `<p class="text-sm leading-relaxed text-muted-foreground">${h.descricao}</p>` : ''}
+
+            ${h.comodidades && h.comodidades.length > 0 ? `
+              <ul class="mt-4 flex flex-wrap gap-1.5">
+                ${h.comodidades.map(item => `
+                  <li class="rounded-full bg-sand-deep px-3 py-1 text-xs font-medium text-foreground/80">${item}</li>
+                `).join('')}
+              </ul>
+            ` : ''}
+
+            <div class="mt-auto pt-5 border-t border-border/80 mt-5">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-1.5">
+                  <span class="inline-flex items-center gap-0.5">${gerarEstrelas(h.avaliacao)}</span>
+                  <span class="font-mono text-xs font-bold text-foreground/80">${h.avaliacao.toFixed(1)}</span>
+                </div>
+                <a href="${h.maps}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-carnauba hover:underline hover:scale-105 transition">
+                  📍 Abrir no Google Maps
+                </a>
+              </div>
+              ${h.localizacao ? `<p class="mt-2.5 text-xs font-medium text-muted-foreground">${h.localizacao}</p>` : ''}
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    let categoriaGastronomiaAtual = 'todos';
+
+    function renderGastronomia(busca = '', cat = 'todos') {
+      const grid = document.getElementById('grid-restaurantes');
+      let res = restaurantesData;
+      if (busca) {
+        res = res.filter(r => r.nome.toLowerCase().includes(busca.toLowerCase()));
+      }
+      if (cat !== 'todos') {
+        res = res.filter(r => r.categoria === cat);
+      }
+
+      grid.innerHTML = res.map(r => `
+        <article class="flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:-translate-y-1.5 hover:shadow-2xl">
+          <div class="relative aspect-[16/10] overflow-hidden bg-sand-deep">
+            <img src="${r.imagem}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e5128/ffffff?text=Gastronomia'" alt="${r.nome}" class="h-full w-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent"></div>
+            ${r.categoria === 'caldeirao' ? `<span class="absolute left-3.5 top-3.5 rounded-full bg-sand/95 px-3.5 py-1 text-[0.7rem] font-bold uppercase tracking-wider text-carnauba shadow-md">Caldeirão</span>` : ''}
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="font-display text-2xl font-bold text-sand drop-shadow-md">${r.nome}</h3>
+            </div>
+          </div>
+          <div class="p-7 flex flex-col flex-1">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-amber-500 font-bold">&#9733; ${r.avaliacao.toFixed(1)}</span>
+              <span class="text-xs font-medium text-muted-foreground">(${r.total} avaliações)</span>
+            </div>
+            <p class="text-sm sm:text-base leading-relaxed text-muted-foreground">${r.descricao}</p>
+            <p class="mt-3.5 text-sm font-medium text-foreground/90"><strong class="text-carnauba font-bold">Destaque:</strong> ${r.prato_destaque}</p>
+            <p class="mt-2.5 text-xs font-medium text-muted-foreground">📍 ${r.endereco}</p>
+            <div class="mt-auto pt-6 border-t border-border/60">
+              <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.nome + ' Piripiri PI')}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full bg-carnauba px-6 py-3 text-sm font-semibold text-sand hover:bg-carnauba/90 transition hover:scale-105 shadow-md">
+                Abrir no Google Maps
+              </a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filtrarGastronomia() {
+      const busca = document.getElementById('busca-restaurante').value;
+      renderGastronomia(busca, categoriaGastronomiaAtual);
+    }
+
+    function filtrarGastronomiaCat(cat, btn) {
+      categoriaGastronomiaAtual = cat;
+      document.querySelectorAll('.cat-gastronomia-btn').forEach(b => {
+        b.classList.remove('bg-carnauba', 'text-sand', 'border-carnauba', 'shadow-sm');
+        b.classList.add('bg-card', 'text-foreground', 'border-border');
+      });
+      btn.classList.add('bg-carnauba', 'text-sand', 'border-carnauba', 'shadow-sm');
+      btn.classList.remove('bg-card', 'text-foreground', 'border-border');
+      filtrarGastronomia();
+    }
+
+    function renderEventos() {
+      const grid = document.getElementById('grid-eventos');
+      if (!grid) return;
+      if (eventosData.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full rounded-3xl border border-dashed border-border bg-card/70 p-12 text-center">
+            <p class="font-display text-xl font-bold text-foreground">Nenhum evento cadastrado</p>
+            <p class="mt-2 text-sm text-muted-foreground">Clique no botão "+ Adicionar evento cultural" acima para criar um novo evento.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = eventosData.map(ev => {
+        const img = Array.isArray(ev.imagens) && ev.imagens.length ? ev.imagens[0] : "https://placehold.co/600x400/8b4513/ffffff?text=Evento+Cultural";
+        return `
+          <article class="flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:-translate-y-1.5 hover:shadow-2xl">
+            <div class="relative aspect-[16/10] overflow-hidden bg-sand-deep">
+              <img src="${img}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b4513/ffffff?text=Evento+Cultural'" alt="${ev.nome}" class="h-full w-full object-cover">
+            </div>
+            <div class="p-7 flex flex-col flex-1">
+              <h3 class="font-display text-2xl font-bold text-foreground">${ev.nome}</h3>
+              <div class="mt-3 flex flex-wrap gap-4 text-xs font-semibold text-muted-foreground">
+                ${ev.data ? `<span>📅 ${ev.data}</span>` : ''}
+                ${ev.local ? `<span>📍 ${ev.local}</span>` : ''}
+              </div>
+              <p class="mt-4 text-sm sm:text-base leading-relaxed text-foreground/80">${ev.descricao || ''}</p>
+              <div class="mt-auto pt-6 border-t border-border/60 flex items-center gap-3">
+                <button type="button" onclick="editarEvento(${ev.id})" class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border border-carnauba/30 bg-sand/50 px-4 py-2.5 text-xs font-bold text-carnauba transition hover:bg-carnauba hover:text-sand">
+                  ✏️ Modificar
+                </button>
+                <button type="button" onclick="solicitarRemocaoEvento(${ev.id})" class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border border-red-200 bg-red-50/70 px-4 py-2.5 text-xs font-bold text-red-700 transition hover:bg-red-600 hover:text-white hover:border-red-600">
+                  🗑️ Remover
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderGuias() {
+      document.getElementById('count-guias').innerText = guiasData.length;
+      const grid = document.getElementById('grid-guias');
+      grid.innerHTML = guiasData.map((g) => {
+        let avatarHtml = '';
+        if (g.foto) {
+          avatarHtml = `<div class="h-24 w-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-carnauba/30 shadow-md">
+            <img src="${g.foto}" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=&quot;flex h-24 w-24 items-center justify-center rounded-full bg-carnauba text-sand font-display text-2xl font-bold&quot;>${g.nome.slice(0, 2).toUpperCase()}</div>'" alt="${g.nome}" class="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105">
+          </div>`;
+        } else {
+          avatarHtml = `<div class="flex h-24 w-24 items-center justify-center rounded-full bg-carnauba/10 font-display text-2xl text-carnauba font-bold mb-4 transition group-hover:bg-carnauba group-hover:text-sand mx-auto shadow-md">
+            ${g.nome.slice(0, 2).toUpperCase()}
+          </div>`;
+        }
+
+        return `
+        <button
+          type="button"
+          onclick="abrirModalGuia(${g.id})"
+          class="group flex h-full flex-col items-center rounded-3xl border border-border bg-card p-6 text-center shadow-sm transition hover:-translate-y-1.5 hover:border-carnauba/50 hover:shadow-xl hover:scale-[1.02] cursor-pointer"
+        >
+          ${avatarHtml}
+          <h3 class="font-display text-xl text-foreground font-bold">${g.nome}</h3>
+          <p class="text-xs uppercase tracking-widest text-muted-foreground mt-1">Guia de turismo</p>
+          <span class="mt-4 inline-flex items-center gap-2 rounded-full border border-carnauba/25 bg-sand-deep px-3.5 py-1">
+            <span class="font-mono text-sm font-semibold text-carnauba">${g.sigla}</span>
+            <span class="text-xs text-foreground/75">${g.pais}</span>
+          </span>
+          <span class="mt-4 text-xs font-bold text-clay group-hover:underline">Ver contato &rarr;</span>
+        </button>
+      `;
+      }).join('');
+    }
+
+    function abrirModalEvento() {
+      document.getElementById('form-novo-evento').reset();
+      document.getElementById('ev-id').value = '';
+      document.getElementById('modal-evento-titulo').innerText = 'Adicionar evento';
+      document.getElementById('ev-foto-hint').innerText = '';
+      document.getElementById('modal-evento').classList.remove('hidden');
+    }
+
+    function editarEvento(id) {
+      const evento = eventosData.find(ev => ev.id === id);
+      if (!evento) return;
+
+      document.getElementById('form-novo-evento').reset();
+      document.getElementById('ev-id').value = evento.id;
+      document.getElementById('ev-nome').value = evento.nome || '';
+      document.getElementById('ev-data').value = evento.data || '';
+      document.getElementById('ev-local').value = evento.local || '';
+      document.getElementById('ev-desc').value = evento.descricao || '';
+      document.getElementById('modal-evento-titulo').innerText = 'Modificar evento';
+      document.getElementById('ev-foto-hint').innerText = '(deixe vazio para manter a imagem atual)';
+      document.getElementById('modal-evento').classList.remove('hidden');
+    }
+
+    function fecharModalEvento() {
+      document.getElementById('modal-evento').classList.add('hidden');
+    }
+
+    function salvarEventosLocalStorage() {
+      try {
+        localStorage.setItem('piripiri_eventos', JSON.stringify(eventosData));
+      } catch (err) {
+        console.warn('Limite de armazenamento local atingido.');
+      }
+    }
+
+    function salvarEvento(e) {
+      e.preventDefault();
+      const idStr = document.getElementById('ev-id').value;
+      const nome = document.getElementById('ev-nome').value.trim();
+      const data = document.getElementById('ev-data').value;
+      const local = document.getElementById('ev-local').value.trim();
+      const descricao = document.getElementById('ev-desc').value.trim();
+      const fileInput = document.getElementById('ev-foto');
+
+      const finalizar = (novaImgUrl) => {
+        if (idStr) {
+          const idNum = Number(idStr);
+          const idx = eventosData.findIndex(ev => ev.id === idNum);
+          if (idx !== -1) {
+            const imagensAtuais = eventosData[idx].imagens || [];
+            eventosData[idx] = {
+              ...eventosData[idx],
+              nome,
+              data,
+              local,
+              descricao,
+              imagens: novaImgUrl ? [novaImgUrl] : imagensAtuais
+            };
+          }
+        } else {
+          eventosData.unshift({
+            id: Date.now(),
+            nome,
+            data,
+            local,
+            descricao,
+            imagens: novaImgUrl ? [novaImgUrl] : []
+          });
+        }
+        salvarEventosLocalStorage();
+        renderEventos();
+        document.getElementById('form-novo-evento').reset();
+        fecharModalEvento();
+      };
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (ev) => finalizar(ev.target.result);
+        reader.readAsDataURL(fileInput.files[0]);
+      } else {
+        finalizar(null);
+      }
+    }
+
+    function solicitarRemocaoEvento(id) {
+      const evento = eventosData.find(ev => ev.id === id);
+      if (!evento) return;
+
+      document.getElementById('remover-evento-texto').innerHTML = `Tem certeza que deseja excluir <strong>"${evento.nome}"</strong> da agenda cultural?`;
+      const btnConfirmar = document.getElementById('btn-confirmar-remocao');
+      btnConfirmar.onclick = () => confirmarRemocaoEvento(id);
+      document.getElementById('modal-remover-evento').classList.remove('hidden');
+    }
+
+    function fecharModalRemoverEvento() {
+      document.getElementById('modal-remover-evento').classList.add('hidden');
+    }
+
+    function confirmarRemocaoEvento(id) {
+      eventosData = eventosData.filter(ev => ev.id !== id);
+      salvarEventosLocalStorage();
+      renderEventos();
+      fecharModalRemoverEvento();
+    }
+
+    function fecharModalEvento() {
+      document.getElementById('modal-evento').classList.add('hidden');
+    }
+
+    function salvarNovoEvento(e) {
+      e.preventDefault();
+      const nome = document.getElementById('ev-nome').value.trim();
+      const data = document.getElementById('ev-data').value;
+      const local = document.getElementById('ev-local').value.trim();
+      const descricao = document.getElementById('ev-desc').value.trim();
+      const fileInput = document.getElementById('ev-foto');
+
+      const finalizar = (imgUrl) => {
+        eventosData.unshift({
+          id: Date.now(),
+          nome,
+          data,
+          local,
+          descricao,
+          imagens: imgUrl ? [imgUrl] : []
+        });
+        try {
+          localStorage.setItem('piripiri_eventos', JSON.stringify(eventosData));
+        } catch (err) {
+          console.warn('Limite de armazenamento local atingido.');
+        }
+        renderEventos();
+        document.getElementById('form-novo-evento').reset();
+        fecharModalEvento();
+      };
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (ev) => finalizar(ev.target.result);
+        reader.readAsDataURL(fileInput.files[0]);
+      } else {
+        finalizar(null);
+      }
+    }
+
+    function abrirModalGuia(id) {
+      const guia = guiasData.find(g => g.id === id);
+      if (!guia) return;
+      const whatsappNum = guia.whatsapp.replace(/\D/g, '');
+      const instaHandle = guia.instagram.replace('@', '');
+
+      let fotoModalHtml = '';
+      if (guia.foto) {
+        fotoModalHtml = `<div class="h-28 w-28 rounded-full overflow-hidden mx-auto mb-4 border-2 border-carnauba shadow-md">
+          <img src="${guia.foto}" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=&quot;flex h-28 w-28 items-center justify-center rounded-full bg-carnauba text-sand font-display text-2xl font-bold&quot;>${guia.nome.slice(0, 2).toUpperCase()}</div>'" alt="${guia.nome}" class="h-full w-full object-cover object-top">
+        </div>`;
+      } else {
+        fotoModalHtml = `<div class="flex h-28 w-28 items-center justify-center rounded-full bg-carnauba text-sand font-display text-2xl font-bold mx-auto mb-4 shadow-md">
+          ${guia.nome.slice(0, 2).toUpperCase()}
+        </div>`;
+      }
+
+      document.getElementById('modal-guia-conteudo').innerHTML = `
+        <div class="flex flex-col items-center text-center">
+          ${fotoModalHtml}
+          <h3 class="font-display text-2xl font-bold text-foreground">${guia.nome}</h3>
+          <span class="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-sand-deep px-3.5 py-1 text-xs font-semibold text-carnauba">
+            País de Origem: ${guia.pais} (${guia.sigla})
+          </span>
+          <p class="mt-4 text-sm leading-relaxed text-foreground/80">${guia.bio}</p>
+          <div class="mt-7 w-full space-y-3 text-left">
+            <a href="https://wa.me/55${whatsappNum}" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl border border-border bg-sand/50 px-5 py-3.5 text-sm font-semibold text-foreground hover:border-carnauba transition hover:scale-[1.02]">
+              <span>📱 WhatsApp: <strong>${guia.whatsapp}</strong></span>
+              <span class="text-xs font-bold text-carnauba">Conversar &rarr;</span>
+            </a>
+            <a href="https://instagram.com/${instaHandle}" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl border border-border bg-sand/50 px-5 py-3.5 text-sm font-semibold text-foreground hover:border-clay transition hover:scale-[1.02]">
+              <span>📸 Instagram: <strong>${guia.instagram}</strong></span>
+              <span class="text-xs font-bold text-clay">Seguir &rarr;</span>
+            </a>
+          </div>
+        </div>
+      `;
+      document.getElementById('modal-guia').classList.remove('hidden');
+    }
+
+    function fecharModalGuia() {
+      document.getElementById('modal-guia').classList.add('hidden');
+    }
+
+    window.onload = function() {
+      renderCarrossel();
+      renderPontos();
+      renderHospedagens();
+      renderGastronomia();
+      renderEventos();
+      renderGuias();
+
+      const initialHash = window.location.hash.replace('#', '');
+      if (initialHash && document.getElementById(`tab-${initialHash}`)) {
+        mudarTab(initialHash, false);
+      }
+    };
+  </script>
+</body>
+</html>
+```
+eof
